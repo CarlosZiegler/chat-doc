@@ -11,6 +11,7 @@ export const getResponseFromChain = async (
 ) => {
   const model = new OpenAIChat({
     openAIApiKey: envs.OPENAI_API_KEY,
+    modelName: "gpt-4",
   })
 
   const chain = ChatVectorDBQAChain.fromLLM(model, vectorStore)
